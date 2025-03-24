@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    cursor: none;
+  }
+  *::selection {
+    background-color: black;
+  }
