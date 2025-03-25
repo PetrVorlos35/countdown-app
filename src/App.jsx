@@ -65,7 +65,7 @@ function App() {
           {view === 'countdown' && (
             <>
               <div className="mb-4">
-                <label className="text-sm text-gray-400">Vyberte datum:</label>
+                <label className="text-sm text-gray-400">Vyberte maturitu:</label>
                 <select
                   onChange={handleDateChange}
                   value={selectedDate}
