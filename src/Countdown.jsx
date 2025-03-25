@@ -32,19 +32,17 @@ const Countdown = ({ targetDate }) => {
 
   const [quote, setQuote] = useState("");
 
-useEffect(() => {
-  const changeQuote = () => {
-    const random = messages[Math.floor(Math.random() * messages.length)];
-    setQuote(random);
-  };
+  useEffect(() => {
+    const changeQuote = () => {
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      setQuote(random);
+    };
 
-  changeQuote(); // první hned
-  const quoteInterval = setInterval(changeQuote, 8000);
+    changeQuote(); // první hned
+    const quoteInterval = setInterval(changeQuote, 8000);
 
-  return () => clearInterval(quoteInterval);
-}, []);
-
-  
+    return () => clearInterval(quoteInterval);
+  }, []);
 
   useEffect(() => {
     const handler = (e) => {
@@ -56,9 +54,10 @@ useEffect(() => {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-
+  // Effect to update the countdown every second
   useEffect(() => {
     setMounted(true);
+    setFinished(false); // reset finished state when date changes
 
     const timer = setInterval(() => {
       const updated = calculateTimeLeft();
@@ -71,7 +70,7 @@ useEffect(() => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]); // Add targetDate to the dependency array
 
   return (
     <div
@@ -83,7 +82,6 @@ useEffect(() => {
       <p className="mt-2 text-sm text-gray-400">
         Slohovka: <span className="font-medium text-white">{new Date(targetDate).toLocaleDateString('cs-CZ')}</span>
       </p>
-
 
       {Object.keys(timeLeft).length ? (
         <div className="flex flex-wrap justify-center gap-4">
@@ -108,18 +106,17 @@ useEffect(() => {
         </div>
       )}
 
-{finished && (
-  <div className="text-4xl mt-4 animate-bounce">
-    {['🎉', '🪅', '🥳', '🎓', '🔥'].map((e, i) => (
-      <span key={i}>{e}</span>
-    ))}
-  </div>
-)}
+      {finished && (
+        <div className="text-4xl mt-4 animate-bounce">
+          {['🎉', '🪅', '🥳', '🎓', '🔥'].map((e, i) => (
+            <span key={i}>{e}</span>
+          ))}
+        </div>
+      )}
 
-<p className="mt-8 text-lg italic text-gray-300 dark:text-gray-400 transition-opacity duration-500">
-  {quote}
-</p>
-
+      <p className="mt-8 text-lg italic text-gray-300 dark:text-gray-400 transition-opacity duration-500">
+        {quote}
+      </p>
     </div>
   );
 };
