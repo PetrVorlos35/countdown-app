@@ -232,52 +232,55 @@ const pov = [
     const questions = isDas ? das : pov; 
   
     return (
-      <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-900 px-4">
-        <div className="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-3xl text-center">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-3xl font-bold text-blue-400"> Mini kvíz</h3>
+<div className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-900 px-4 py-8">
+  <div className="w-full max-w-4xl text-center">
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-10">
+      <h3 className="text-3xl font-bold text-blue-400">Mini kvíz</h3>
 
-            <h2 className='text-3xl font-bold text-blue-400'>{isDas? "DAS" : "POV"}</h2>
-  
-            <button
-              onClick={toggleSet}
-              className="bg-gray-500 hover:bg-gray-600 px-4 py-2 rounded text-white text-lg"
-            >
-              {isDas ? 'Přepnout na POV' : 'Přepnout na DAS'}
-            </button>
-          </div>
-  
-          {index === null ? (
-            <p className="text-gray-300 mb-4 text-lg">Klikni na tlačítko a začni trénovat mozek!</p>
-          ) : (
-            <div className="mb-6 transition duration-300">
-              <p className="text-2xl font-medium">{questions[index].question}</p>
-  
-              {showAnswer && (
-                <p className="mt-4 text-green-400 text-lg italic">{questions[index].answer}</p>
-              )}
-            </div>
-          )}
-  
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-            <button
-              onClick={nextQuestion}
-              className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded text-white text-lg"
-            >
-              {index === null ? 'Spustit kvíz' : 'Další otázka'}
-            </button>
-  
-            {index !== null && !showAnswer && (
-              <button
-                onClick={() => setShowAnswer(true)}
-                className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded text-white text-lg"
-              >
-                Zobrazit odpověď
-              </button>
-            )}
-          </div>
-        </div>
+      <h2 className="text-3xl font-bold text-blue-400">
+        {isDas ? "DAS" : "POV"}
+      </h2>
+
+      <button
+        onClick={toggleSet}
+        className="bg-gray-600 hover:bg-gray-700 px-5 py-2 rounded-xl text-white text-base transition"
+      >
+        {isDas ? "Přepnout na POV" : "Přepnout na DAS"}
+      </button>
+    </div>
+
+    {index === null ? (
+      <p className="text-gray-300 mb-8 text-xl">Klikni na tlačítko a začni trénovat mozek!</p>
+    ) : (
+      <div className="mb-8 transition duration-300">
+        <p className="text-2xl font-semibold text-white">{questions[index].question}</p>
+
+        {showAnswer && (
+          <p className="mt-4 text-green-400 text-lg italic">{questions[index].answer}</p>
+        )}
       </div>
+    )}
+
+    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4">
+      <button
+        onClick={nextQuestion}
+        className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl text-white text-lg transition"
+      >
+        {index === null ? "Spustit kvíz" : "Další otázka"}
+      </button>
+
+      {index !== null && !showAnswer && (
+        <button
+          onClick={() => setShowAnswer(true)}
+          className="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-xl text-white text-lg transition"
+        >
+          Zobrazit odpověď
+        </button>
+      )}
+    </div>
+  </div>
+</div>
+
     );
   };
   

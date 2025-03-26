@@ -5,13 +5,13 @@ const Navbar = ({ setView, currentView }) => {
         <div className="flex gap-4">
           <button
             onClick={() => setView('countdown')}
-            className={`text-sm hover:underline ${currentView === 'countdown' ? 'font-bold text-blue-400' : ''}`}
+            className={`text-sm cursor-pointer hover:underline ${currentView === 'countdown' ? 'font-bold text-blue-400' : ''}`}
           >
             Odpočet
           </button>
           <button
             onClick={() => setView('quiz')}
-            className={`text-sm hover:underline ${currentView === 'quiz' ? 'font-bold text-blue-400' : ''}`}
+            className={`text-sm cursor-pointer hover:underline ${currentView === 'quiz' ? 'font-bold text-blue-400' : ''}`}
           >
             Kvíz
           </button>
