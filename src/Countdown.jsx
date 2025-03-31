@@ -81,7 +81,7 @@ const Countdown = ({ targetDate }) => {
   <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Čas do maturit</h2>
 
   <p className="text-base md:text-lg text-gray-400 mb-8">
-    Slohovka:{" "}
+    Datum:{" "}
     <span className="font-semibold text-white">
       {new Date(targetDate).toLocaleDateString("cs-CZ")}
     </span>
