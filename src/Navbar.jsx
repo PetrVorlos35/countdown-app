@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 const Navbar = ({ setView, currentView }) => {
+  const navigate = useNavigate(); // hook na přesměrování
+
     return (
       <nav className="w-full px-6 py-4 bg-gray-900 text-white shadow-md sticky top-0 z-40 flex justify-between items-center">
         <h1 className="text-xl font-bold">🎓 Maturitní Countdown</h1>
@@ -15,6 +19,12 @@ const Navbar = ({ setView, currentView }) => {
           >
             Kvíz
           </button>
+          <button
+          onClick={() => navigate('/cestina')}
+          className="text-sm cursor-pointer hover:underline"
+        >
+          čeština
+        </button>
         </div>
       </nav>
     );
