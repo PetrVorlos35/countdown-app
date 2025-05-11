@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const SMERY = {
   "renesance": {
@@ -198,7 +199,7 @@ export default function SmerDetail() {
       </div>
 
       <div className="mt-6">
-        <a href="/cestina" className="text-blue-600 hover:underline">← Zpět na tabulku</a>
+        <Link to="/cestina" className="text-blue-600 hover:underline">← Zpět na tabulku</Link>
       </div>
     </div>
   );
