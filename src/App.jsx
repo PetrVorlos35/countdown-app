@@ -32,7 +32,7 @@ function App() {
     const allDates = [
       "2025-04-11T08:00:00", "2025-04-14T08:00:00", "2025-05-02T08:00:00", 
       "2025-05-05T08:00:00", "2025-05-06T08:00:00", "2025-05-14T08:00:00", 
-      "2025-05-19T08:00:00"
+      "2025-05-19T07:00:00", "2025-05-20T07:00:00", "2025-05-21T07:00:00"
     ];
     
     const currentDate = new Date();
@@ -83,7 +83,9 @@ function App() {
                 <option value="2025-05-05T08:00:00">5. května 2025 - didakťák čeština</option>
                 <option value="2025-05-06T08:00:00">6. května 2025 - didakťák matika+</option>
                 <option value="2025-05-14T08:00:00">14. května 2025 - obhajoby</option>
-                <option value="2025-05-19T08:00:00">19. května 2025 - ústní zkoušky</option>
+                <option value="2025-05-19T07:00:00">19. května 2025 - ústní zkoušky</option>
+                <option value="2025-05-20T07:00:00">20. května 2025 - ústní zkoušky</option>
+                <option value="2025-05-21T07:00:00">21. května 2025 - ústní zkoušky</option>
               </select>
             </div>
           </div>
