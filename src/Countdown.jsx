@@ -120,9 +120,9 @@ const Countdown = ({ targetDate }) => {
     </div>
   )}
 
-  <p className="mt-10 text-lg md:text-xl italic text-gray-400 transition-opacity duration-500 max-w-2xl mx-auto">
+  {/* <p className="mt-10 text-lg md:text-xl italic text-gray-400 transition-opacity duration-500 max-w-2xl mx-auto">
     {quote}
-  </p>
+  </p> */}
 </div>
 
   );
